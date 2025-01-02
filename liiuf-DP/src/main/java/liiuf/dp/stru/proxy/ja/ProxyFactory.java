@@ -4,6 +4,9 @@ import java.lang.reflect.InvocationHandler;
 import java.lang.reflect.Method;
 import java.lang.reflect.Proxy;
 
+/**
+ * 通过接口进行代理，需要目标类实现接口。
+ */
 public class ProxyFactory {
     public static <T> T getProxy(T target) {
         return (T) Proxy.newProxyInstance(target.getClass().getClassLoader(), target.getClass().getInterfaces(), new DefinedHandler(target));

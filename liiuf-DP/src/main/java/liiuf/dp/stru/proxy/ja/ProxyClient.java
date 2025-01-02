@@ -1,6 +1,7 @@
 package liiuf.dp.stru.proxy.ja;
 
 import liiuf.dp.stru.proxy.ja.bean.IProxyService;
+import liiuf.dp.stru.proxy.ja.bean.ProxyNoService;
 import liiuf.dp.stru.proxy.ja.bean.ProxyService;
 
 public class ProxyClient {
@@ -19,5 +20,8 @@ public class ProxyClient {
         proxyFactory3.setTarget(proxyService);
         IProxyService proxy = (IProxyService) proxyFactory3.getProxy();
         proxy.exec();
+        System.out.println("-------------------------------------------");
+        // 第四种测试
+        ProxyFactoryNoImpl.getProxy(proxyService).exec();
     }
 }
